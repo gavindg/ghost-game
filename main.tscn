@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=4 uid="uid://cqow47bch5ocs"]
+[gd_scene load_steps=10 format=4 uid="uid://cqow47bch5ocs"]
 
 [ext_resource type="Script" uid="uid://bss4mgihbqfdc" path="res://character_body_2d.gd" id="1_ig7tw"]
 [ext_resource type="Texture2D" uid="uid://dvq1fep427ah" path="res://art/Gamer_Ghost_sad.png" id="2_0xm2m"]
 [ext_resource type="Texture2D" uid="uid://bo7bfyijqgtcs" path="res://art/IMG_5665.PNG" id="3_h2yge"]
 [ext_resource type="Texture2D" uid="uid://c3he4io7eutru" path="res://art/sun.png" id="4_lquwl"]
 [ext_resource type="Texture2D" uid="uid://8vio2a8n466l" path="res://art/neutral_point_light.webp" id="5_7mycd"]
+[ext_resource type="PackedScene" uid="uid://ey53o3jd0way" path="res://scenes/gameOver.tscn" id="6_7mycd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ig7tw"]
 size = Vector2(32, 32)
@@ -68,3 +69,9 @@ texture = ExtResource("4_lquwl")
 energy = 0.5
 texture = ExtResource("5_7mycd")
 texture_scale = 3.0
+
+[node name="Control" parent="." instance=ExtResource("6_7mycd")]
+offset_left = 547.0
+offset_top = 298.0
+offset_right = 547.0
+offset_bottom = 298.0
