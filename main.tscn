@@ -1,8 +1,14 @@
-[gd_scene load_steps=7 format=4 uid="uid://cqow47bch5ocs"]
+[gd_scene load_steps=9 format=4 uid="uid://cqow47bch5ocs"]
 
-[ext_resource type="Script" uid="uid://bss4mgihbqfdc" path="res://character_body_2d.gd" id="1_ig7tw"]
+[ext_resource type="Script" path="res://character_body_2d.gd" id="1_ig7tw"]
 [ext_resource type="Texture2D" uid="uid://dvq1fep427ah" path="res://art/Gamer_Ghost_sad.png" id="2_0xm2m"]
 [ext_resource type="Texture2D" uid="uid://bo7bfyijqgtcs" path="res://art/IMG_5665.PNG" id="3_h2yge"]
+
+[sub_resource type="Gradient" id="Gradient_h2yge"]
+colors = PackedColorArray(0, 0, 0.27450982, 1, 0, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_1bvp3"]
+gradient = SubResource("Gradient_h2yge")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ig7tw"]
 size = Vector2(32, 32)
@@ -43,6 +49,15 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_1bvp3")
 
 [node name="Main" type="Node2D"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = 1152.0677
+offset_top = -6333.705
+offset_right = 8040.4307
+offset_bottom = -5181.378
+rotation = 1.5707964
+texture = SubResource("GradientTexture1D_1bvp3")
+flip_h = true
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
 position = Vector2(366, 412)
