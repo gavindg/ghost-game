@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://dtg1at2oqkh0b"]
+
+[ext_resource type="Script" uid="uid://b72rfstcqfo6c" path="res://music/music.gd" id="1_gn5aw"]
+[ext_resource type="AudioStream" uid="uid://35up5arok1bo" path="res://music/music_intro.wav" id="2_0isv4"]
+[ext_resource type="AudioStream" uid="uid://cat74jbo4ugdv" path="res://music/music_loop.wav" id="3_jipuu"]
+
+[node name="ADD THIS TO LEVEL" type="Node2D" node_paths=PackedStringArray("intro", "loop")]
+script = ExtResource("1_gn5aw")
+intro = NodePath("Intro")
+loop = NodePath("Loop")
+
+[node name="Intro" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_0isv4")
+
+[node name="Loop" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_jipuu")
+
+[connection signal="finished" from="Intro" to="." method="_on_loop_finished"]
+[connection signal="finished" from="Loop" to="." method="_on_loop_finished"]
